@@ -1,0 +1,69 @@
+<html>
+  <head></head>
+  <body>
+    <div class="head">
+      <span>book my show</span><br>
+      <span>Logo</span>
+      <span>Header</span>
+    </div><br>
+    <div class="left">
+      <table>
+        <caption>Movies</caption>
+        <tr><td> </td></tr>
+        <!--<tr>
+          <td>Bahubali2 &nbsp;&nbsp;<button (click)='($event)'>select</button></td>
+        </tr>
+        <tr>
+          <td>Adhurs &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button (click)='($event)'>select</button></td>
+        </tr>
+        <tr>
+          <td>Jai lava kusa&nbsp;&nbsp;<button (click)='($event)'>select</button></td>
+        </tr>-->
+        <tr *ngFor="let show of movie;let i=index">
+          <td>{{movie[i]}}<button (click)="mov(i)">select</button></td>
+        </tr>
+      </table>
+      </div>
+      <div class="middle">
+        <table>
+          <caption>Theaters</caption>
+          <tr><td> </td></tr>
+          <!--<tr>
+            <td>jagadamba &nbsp;&nbsp;<button (click)='($event)'>Book</button></td>
+          </tr>
+          <tr>
+            <td>Kinnera &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button (click)='($event)'>Book</button></td>
+          </tr>
+          <tr>
+            <td>Melody &nbsp;&nbsp;<button (click)='($event)'>Book</button></td>
+          </tr>-->
+          <tr *ngFor="let show of theater;let i=index">
+            <td>{{theater[i]}}<button (click)="tick(i)">book</button></td>
+          </tr>
+        </table>
+        </div>
+        <div class="right">
+          <table>
+              <caption>BookNow</caption>
+            <tr>
+              <td>How many tickets?<br><input type="number"[(ngModel)]="number" required><br>Mobile#<br><input type="tel"><br><br><button (click)="book($event)">Book</button></td>
+            </tr>
+          </table>
+          </div><br><br>
+          <h1>footer</h1>
+          <div>
+            <h2>result:</h2><br>
+          </div>
+          <div class="out">
+            <table *ngFor="let mov of select">
+              <tr><th>movie</th><th>Theater</th><th>No of tickets</th></tr>
+              <tr>
+                <td>{{mov.movie}}</td>
+                <td>{{mov.theater}}</td>
+                <td>{{mov.nooftickets}}</td>
+              </tr>
+            </table>
+          </div>
+
+  </body>
+</html>
